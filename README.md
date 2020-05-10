@@ -1,6 +1,6 @@
-# /docker directory
+# Docker Directory 
 
-Dockerfile used to create darknet and Opencv image.
+Dockerfile used to create darknet, OpenCv and python image.
 
 # Docker Images contain Darknet and OpenCV
 
@@ -12,8 +12,7 @@ All of Darknet's images are based on Ubuntu 18.04.
 docker build -t darknet .
 ```
 
-## How to test the docker image
-```
+## How to run the docker image
 To run container in interactive mode (bash) do
 
 ```
@@ -23,12 +22,16 @@ docker run --rm -it --name darknet darknet:latest bash
 Inside the container you can perform some darknet tasks like
 ```
 ./darknet detector test data/obj.data cfg/yolov3-tiny-custom.cfg backup/yolov3-tiny-custom_2000.weights data/football.png
+```
 
-## How to train custom data path in train.txt
+## How to train custom data 
+To generate train data path in train.txt, run
 ```
 python3 generate_train.py
+```
 
-## RUN train custom weight file
+To train custom weight file, run
 ```
 ./darknet detector train data/obj.data cfg/yolov3-tiny-custom-train.cfg backup/darknet53.conv.74
+```
 
