@@ -1,3 +1,5 @@
 /data/footballtest.png
 /data/footballtest.mp4
+/data/obj/*
 /backup/yolov3.weights
+/backup/darknet53.conv.74
