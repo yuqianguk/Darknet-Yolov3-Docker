@@ -1,6 +1,5 @@
 # Run custom Darknet weight training in Docker
 # Linux X64
-#  FROM ubuntu:18.04
 FROM debian:stretch
 
 LABEL maintainer="yuqianguk@gmail.com"
@@ -18,7 +17,7 @@ RUN \
     wget 
 
 # install addiatial dependencies
-RUN pip3 install --upgrade pip
+RUN pip3 install --upgrade pip 
 
 # working directory
 WORKDIR /darknet
@@ -27,7 +26,8 @@ WORKDIR /darknet
 RUN \
     git clone https://github.com/AlexeyAB/darknet.git \
     &&  cd darknet \
-    &&  make  
+    &&  make \
+    &&  wget https://pjreddie.com/media/files/darknet53.conv.74 
 
 # Copy local file to docker image file 
 COPY backup /darknet/darknet/backup/
